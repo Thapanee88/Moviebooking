@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Movies</h1>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    <% movies.forEach(function(movies){ %>
+        <div class="col">
+            <div class="card">
+                <img src="<%= movies.image %>" class="card-img-top" alt="...">
+                <h5 class="card-title"><%= movies.title %></h5>
+            </div>
+        </div>
+    <% }); %>
+    </div>
+
+<%- include("partials/footer.ejs") %>

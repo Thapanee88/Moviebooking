@@ -1,0 +1,77 @@
+html,body{
+    background-color: #FEE16C;
+    height: 100%;
+    width: 100%;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    padding-top: 2px;
+    position: relative;
+    height: auto;
+    margin-top: 2rem;
+    background-color: #313854;
+}
+footer h3{
+    color: #FEE16C;
+}
+footer ul{
+    list-style-type: none;
+    padding: 0px;
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* card */
+.card{
+    padding: 5px;
+    text-align: center;
+    color: #FEE16C;
+    background-color: #313854;
+}
+.card-img-top {
+    margin-bottom: 5px;
+}
+.card:hover + .card-img-top{
+    background-color: rgba(333, 333, 333, 0.3);
+}
+
+/* box office */
+.box_office{
+    margin: 2rem;
+}
+.box_office h1{
+    text-align: center;
+    color: #313854;
+}
+/* seperate */
+.box_office .separate {
+    display: block;
+    border-bottom: 1px solid #313854;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 29px;
+}
+
+/*sildbar*/
+.sidebar{
+    background: #636363;
+    height: 100%;
+}
+.nav-link{
+    color: #fff;
+}
+
+.fa-heart-o {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .fa-heart {
+    color: red;
+    cursor: pointer;
+  }

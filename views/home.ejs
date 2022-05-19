@@ -1,0 +1,151 @@
+<%- include("partials/header.ejs") %>
+
+<%/* advert slide */%>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://lh3.googleusercontent.com/ah-_tYyA_wxYCuSUi4fkJmiJLjqUM1Pej0EiuyG3WOicy1OdTVBpgyNIbEgwXryycdkTKK4bWXMQpNHDDRM_nOqst1rIfOVJaA=w888" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://lh3.googleusercontent.com/ah-_tYyA_wxYCuSUi4fkJmiJLjqUM1Pej0EiuyG3WOicy1OdTVBpgyNIbEgwXryycdkTKK4bWXMQpNHDDRM_nOqst1rIfOVJaA=w888" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://lh3.googleusercontent.com/ah-_tYyA_wxYCuSUi4fkJmiJLjqUM1Pej0EiuyG3WOicy1OdTVBpgyNIbEgwXryycdkTKK4bWXMQpNHDDRM_nOqst1rIfOVJaA=w888" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<%/* box office */%>
+<div class="box_office">
+    <h1>Box Office</h1>
+    <div class="separate"></div>
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+    <% movies.forEach(function(movies){ %>
+        <div class="col">
+            <div class="card">
+                <img src="<%= movies.image %>" class="card-img-top" alt="...">
+                <div class="card-hover">
+                    <a class="add_movie_fav" data-movie-id="2767" href="javascript:;">
+                        <span id = heart><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
+                    </a>
+                    <div class="card-cate">
+                        <span id="clock"><i class="fa fa-tag" aria-hidden="true"></i></span>
+                        <%= movies.genre %>
+                    </div>
+                    <div class="card-time">
+                        <span id="clock"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                        <%= movies.length %>
+                    </div>
+                    <div class="card-btn">
+                        <a href="/movieinfo/<%= movies._id %>" class="mlbc-btn-mi">MORE INFO</a>
+                        <a href="#" class="mlbc-btn-bn buynow_button">BUY NOW</a>
+                    </div>
+                </div>
+                <h5 class="date"></h5>
+                <h5 class="card-title"><%= movies.title %></h5>
+            </div>
+        </div>
+    <% }); %>
+    </div>
+</div>
+
+
+
+<%/* movie */%>
+<h1>Movies</h1>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie6.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie7.jpg" class="card-img-top" alt="...">
+            <div class="card-hover">
+                <a class="add_movie_fav" data-movie-id="2767" href="javascript:;">
+                    <span id = heart><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
+                </a>
+                <div class="card-cate">
+                    <span id="clock"><i class="fa fa-tag" aria-hidden="true"></i></span>
+                    ผจญภัย / แอนิเมชัน / ตลก 
+                </div>
+                <div class="card-time">
+                    <span id="clock"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                    01 ชม. 32 นาที 
+                </div>
+                <div class="card-btn">
+                    <a href="#" class="mlbc-btn-mi">MORE INFO</a>
+                    <a href="#" class="mlbc-btn-bn buynow_button">BUY NOW</a>
+                </div>
+            </div>
+            <h5 class="date"></h5>
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie8.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie9.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie10.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie11.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie12.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie13.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie14.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/pic/movie15.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Card title</h5>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

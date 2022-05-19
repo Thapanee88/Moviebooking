@@ -1,0 +1,57 @@
+<%- include("partials/header.ejs") %>
+
+<h1><%= movie.title %></h1>
+<img src="<%= movie.image %>" alt="Pompo The Cinephile">
+
+<div class="container">
+    <h1>Informations</h1>
+    <h3>genre</h3>
+    <h4><%= movie.genre %></h4>
+    <h3>length</h3>
+    <h4><%= movie.length %></h4>
+    <h3>description</h3>
+    <h4><%= movie.description %></h4>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        <div class="modal-body">
+            <form action="/movie_info" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="username" class="form-control" name="comment[author]">
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" name="comment[text]"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <h1>Comments</h1>
+    <% movie.comments.forEach(function(comment){ %>
+        <p>
+            <strong><%= comment.author %></strong> - <%= comment.text %>
+        </p>
+        <% }) %>
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>
